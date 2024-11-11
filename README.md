@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js dashboard
 
-## Getting Started
+This is a simple dashboard built with Next.js, Drizzle ORM, and Tailwind CSS.
+The goal is to learn how to build a dashboard with Next.js and host it on AWS.
 
-First, run the development server:
+## Drizzle Cheat sheet
+
+### Open drizzle studio
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx drizzle-kit studio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Other drizzle-kit commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Push to database
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npx drizzle-kit push
+```
 
-## Learn More
+Generate schema
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx drizzle-kit generate
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Migrate schema
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npx drizzle-kit migrate
+```
 
-## Deploy on Vercel
+### Run index.ts file
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This is useful for seeding,
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+bun src/index.ts
+```
+
+or
+
+```bash
+pnpm run src/index.ts
+```
