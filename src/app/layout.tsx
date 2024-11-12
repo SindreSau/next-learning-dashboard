@@ -12,7 +12,7 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  console.log("Using DATABASE_URL", process.env.DATABASE_URL);
+  console.log("Using DATABASE_URL", process.env.NEXT_PUBLIC_DATABASE_URL);
 
   return (
     <html lang="en">
