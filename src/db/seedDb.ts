@@ -4,6 +4,12 @@ import { posts as postsTable } from "./schema";
 
 async function seedDb() {
   try {
+    const posts = await db.select().from(postsTable);
+    if (posts.length > 0) {
+      console.log("Database already seeded!");
+      return;
+    }
+
     const newPosts = await db.insert(postsTable).values([
       {
         title: "Getting Started with TypeScript",
