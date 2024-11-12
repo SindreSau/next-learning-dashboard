@@ -10,6 +10,10 @@ RUN pnpm install --frozen-lockfile
 
 FROM base AS builder
 WORKDIR /app
+# Add database URL for build time
+ENV DATABASE_URL="postgresql://admin:admin@localhost:5432/nextapp"
+ENV NEXT_PUBLIC_API_URL="http://localhost:3000"
+ENV NODE_ENV="production"
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN pnpm build
